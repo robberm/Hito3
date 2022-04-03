@@ -14,13 +14,13 @@ public class Weapon : MonoBehaviour
     public float bulletSpeed = 40f;
     public Transform firePoint;
     public float offset;
-    Vector3 CircunferenciaTr = GameObject.Find("CircunfRot").transform.position;
-    Rigidbody2D CircunferenciaRB = GameObject.Find("CircunfRot").GetComponent<Rigidbody2D>();
+    
 
-    public Weapon()
-    {
 
-    }
+
+
+    //Rigidbody2D CircunferenciaRB = GameObject.Find("CircunfRot").GetComponent<Rigidbody2D>();
+
     // Purpose is to develop all characteristics of bullet here
 
 
@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        Vector3 CircunferenciaTr = GameObject.Find("CircunfRot").transform.position;
         CircunferenciaTr = GameObject.Find("Player").transform.position;
         GameObject.Find("CircunfRot").transform.position = CircunferenciaTr;
         ProjectileShoot();
@@ -55,7 +56,7 @@ public class Weapon : MonoBehaviour
                 Rigidbody2D rbullet = Bullet.GetComponent<Rigidbody2D>();
                 //rbullet.velocity = new Vector2(bulletSpeed * (shootDir.x / (shootDir.x + shootDir.y)), bulletSpeed * (shootDir.y / (shootDir.x + shootDir.y)));
                 rbullet.AddForce(shootDir * bulletSpeed, ForceMode2D.Impulse);
-                Debug.Log(shootDir);
+               
             }
 
 
