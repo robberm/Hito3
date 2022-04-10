@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerProperties : MonoBehaviour
 {
     public int playerHealth = 100;
+    
     void Update()
     {
         if (playerHealth <= 0)
@@ -17,5 +18,9 @@ public class PlayerProperties : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+
+
+       
     }
 }
